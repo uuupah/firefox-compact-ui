@@ -1,14 +1,14 @@
 /* this style maintained by https://github.com/MapoMagpie/firefox-compact-ui */
 :root {
-  --global-height: 28px !important;
+  --global-height: 22px !important;
   --url-container-width: 250px !important;
-  --url-container-max-width: 600px !important;
-  --url-container-max-height: 28px !important;
-  --urlbar-min-height: 28px !important;
+  --url-container-max-width: 250px !important;
+  --url-container-max-height: 22px !important;
+  --urlbar-min-height: 22px !important;
   --tab-max-width-c: 120px !important;
   --tab-max-width-s: 210px !important;
-  --tab-min-height: 28px !important;
-  --tab-max-height: 28px !important;
+  --tab-min-height: 22px !important;
+  --tab-max-height: 22px !important;
   --tab-block-margin: 0px !important;
 }
 
@@ -46,10 +46,13 @@ hbox.titlebar-spacer,
   flex-wrap: wrap !important;
 
   border-radius: 0 !important;
-  font-family: "Terminus", Sans-serif !important;
-  letter-spacing: 0;
-  font-size: 18px !important;
-  letter-spacing: -1px;
+  font-family: "Unifont-JP", "Font Awesome 6 Free", Sans-serif !important;
+  letter-spacing: 0 !important;
+  font-size: 16px !important;
+
+  border-top-width: 0 !important;
+  /* border-bottom-width: 2px !important; */
+  /* border-color: #3e4451 !important;; */
 }
 
 #navigator-toolbox > #titlebar {
@@ -82,18 +85,38 @@ hbox.titlebar-spacer,
 /* the specific size is not important, it just needs to be a whole pixel to aid in
    the pixel perfect text rendering */
 .tabbrowser-tab .tab-icon-stack {
-  width: 20px !important;
+  width: 12px !important;
+  padding-right: 20px !important;
 }
 
 #pinned-tabs-container[orient="horizontal"] {
   margin-inline-end: 0px !important;
 }
 
+/*#searchbar {*/
+
 #urlbar,
 .urlbar-background {
   border-radius: 0 !important;
+  font-size: 16px !important;
+  letter-spacing: 0px !important;
+  height: 22px !important;
 }
-/*#searchbar {*/
+
+
+/*tested*/
+/*.urlbar-background {
+  width: var(--url-container-width) !important;
+}
+
+.urlbar-background:focus-within {
+  width: var(--url-max-container-width) !important;
+}*/
+/*.urlbar-background:focus-within {
+border:0 !important;
+padding:0 !important;
+margin:0 !important;
+}*/
 
 #nav-bar,
 #nav-bar-customization-target,
@@ -101,6 +124,7 @@ hbox.titlebar-spacer,
   margin: 0px !important;
   padding: 0px !important;
   height: var(--global-height) !important;
+  border-width: 0 !important;
 }
 
 #urlbar-container {
@@ -108,10 +132,10 @@ hbox.titlebar-spacer,
   transition: width 400ms !important;
 }
 #urlbar-container:hover:focus-within,
-#urlbar-container:focus-within,
-#urlbar-container:hover {
+#urlbar-container:focus-within {
   width: var(--url-container-max-width) !important;
   transition: width 400ms !important;
+  border: 0 !important;
 }
 #urlbar > vbox.urlbarView {
   display: none !important;
@@ -123,7 +147,7 @@ hbox.titlebar-spacer,
 
 #PersonalToolbar {
   width: 28px !important;
-  height: 28px !important;
+  height: 22px !important;
   padding-inline: 0 !important;
   margin-right: 1px !important;
 }
@@ -155,52 +179,235 @@ menuitem.bookmark-item {
 }
 
 /* place navigator bar to bottom */
-/* #navigator-toolbox {
+ /*#navigator-toolbox {
   order: 2;
-} */
+}*/
 
-/* these styles are related to replacing buttons with text characters */
-#back-button .toolbarbutton-icon,
-#forward-button .toolbarbutton-icon,
-/* .tab-close-button .toolbarbutton-icon, */
+/*uber verbose to make sure everything that needs to get fixed gets fixed*/
+
+/* back button */
+#back-button {
+  padding: 0 !important;
+}
+
+#back-button .toolbarbutton-icon {
+  display: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  height: 100% !important;
+  min-height: 100% !important;
+}
+
+#back-button .toolbarbutton-text {
+  padding: 0 !important;
+}
+
+ #back-button .toolbarbutton-text::before {
+   content: "<";
+   padding: 0 4px !important;
+   letter-spacing: 0 !important;
+   font-size: 16px !important;
+ }
+
+#back-button .toolbarbutton-text {
+   display: inline-block !important;
+  padding-top: 0 !important;
+  border-radius: 0 !important;
+  height: 100% !important;
+  min-height: 100% !important;
+}
+
+/* forward button */
+#forward-button {
+  padding: 0 !important;
+}
+
+#forward-button .toolbarbutton-icon {
+  display: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  height: 100% !important;
+  min-height: 100% !important;
+}
+
+#forward-button .toolbarbutton-text {
+  padding: 0 !important;
+}
+
+ #forward-button .toolbarbutton-text::before {
+   content: ">";
+   padding: 0 4px !important;
+   letter-spacing: 0 !important;
+   font-size: 16px !important;
+   border-radius: 0 !important;
+ }
+
+#forward-button .toolbarbutton-text {
+   display: inline-block !important;
+  padding-top: 0 !important;
+  border-radius: 0 !important;
+  height: 100% !important;
+  min-height: 100% !important;
+}
+
+/* download button */
+#downloads-button {
+  padding: 0 !important;
+  height: 100% !important;
+  min-height: 100% !important;
+}
+
+#downloads-button .toolbarbutton-badge-stack {
+  display: inline-block !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  height: 100% !important;
+  min-height: 100% !important;
+}
+
+#downloads-button .toolbarbutton-badge-stack::before {
+  content: "dwn";
+  padding: 0 4px !important;
+  font-size: 16px !important;
+  border-radius: 0 !important;
+}
+
+#downloads-indicator-anchor,
+#downloads-indicator-progress-outer,
+#downloads-indicator-start-box,
+#downloads-indicator-finish-box {
+  display:none !important;
+}
+
+/* extensions button */
+#unified-extensions-button {
+  padding: 0 !important;
+}
+
+#unified-extensions-button .toolbarbutton-icon {
+  display: none;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  height: 100% !important;
+  min-height: 100% !important;
+}
+
+#unified-extensions-button .toolbarbutton-text::before {
+  content: "ext";
+  padding: 0 4px !important;
+  letter-spacing: 0 !important;
+  font-size: 16px !important;
+  border-radius: 0 !important;
+}
+
+#unified-extensions-button .toolbarbutton-text {
+  display: inline-block !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  height: 100% !important;
+  min-height: 100% !important;
+}
+
+/* menu button */
+#PanelUI-button {
+  padding: 0 !important;
+}
+
+#PanelUI-menu-button {
+  padding: 0 !important;
+}
+
+#PanelUI-menu-button .toolbarbutton-badge-stack {
+  padding: 0 !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  border-radius: 0 !important;
+}
+
+#PanelUI-menu-button .toolbarbutton-badge-stack::before {
+  content: "mnu";
+  padding: 0 4px !important;
+  letter-spacing: 0 !important;
+  font-size: 16px !important;
+}
+
+#PanelUI-menu-button .toolbarbutton-icon {
+  display:none !important;
+}
+
+/* tab close button */
+/* .tab-stack .tab-background has some minor styling, just for future reference */
+/* the below is an image with padding, but no singular parent element */
+.tab-close-button.close-icon {
+  /*padding: 0 !important;*/
+  /*padding: 4px;*/
+  border-radius: 0 !important;
+  /*height: 100% !important;
+  min-height: 100% !important;*/
+}
+
+/* new tab button */
+#tabs-newtab-button {
+  padding: 0 !important;
+}
+
 #tabs-newtab-button .toolbarbutton-icon {
   display: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  height: 100% !important;
+  min-height: 100% !important;
 }
-
-#back-button .toolbarbutton-text::before {
-  content: "<";
-  font-weight: bold;
-}
-
-#forward-button .toolbarbutton-text::before {
-  content: ">";
-  font-weight: bold;
-}
-
-/* .tab-close-button::before { */
-/* 	content: "x" */
-/* 	display: inline-block !important; */
-/* 	padding: 0 4px; */
-/* 	font-weight: bold; */
-/* 	color: currentColor; */
-/* } */
 
 #tabs-newtab-button .toolbarbutton-text::before {
   content: "+";
+  padding: 0 4px !important;
+  letter-spacing: 0 !important;
+  font-size: 16px !important;
 }
 
-#back-button .toolbarbutton-text,
-#forward-button .toolbarbutton-text,
-#tabs-newtab-button .toolbarbutton-text
-/* .tab-close-button  */ {
+#tabs-newtab-button .toolbarbutton-text {
   display: inline-block !important;
-  padding: 0 4px;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  height: 100% !important;
+  min-height: 100% !important;
 }
 
+/* list all tabs button */
+#alltabs-button {
+  padding: 0 !important;
+}
+
+#alltabs-button .toolbarbutton-badge-stack {
+  padding: 0 !important;
+  border-radius: 0 !important;
+  height: 100% !important;
+  min-height: 100% !important;
+}
+
+#alltabs-button .toolbarbutton-badge-stack::before {
+  content: "v";
+  padding: 0 4px !important;
+  letter-spacing: 0 !important;
+  font-size: 16px !important;
+}
+
+#alltabs-button .toolbarbutton-icon {
+  display: none !important;
+}
+
+/* tooltips */
+.cui-widget-panel.panel-no-padding {
+  margin-top: 0px !important;
+}
+/* not sure i can do this for extensions because it opens a shadow root in the button */
+
+/* colours */
 #nav-bar {
   background-color: #3e4451 !important;
 }
 
-.urlbar-background {
+.urlbar-input-container{
   background-color: #282c34 !important;
 }
