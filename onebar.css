@@ -1,15 +1,11 @@
 /* this style maintained by https://github.com/MapoMagpie/firefox-compact-ui */
 :root {
-  --globle-height: 28px !important;
-  /* 地址栏最小宽度 */
+  --global-height: 28px !important;
   --url-container-width: 250px !important;
-  /* 地址栏最大宽度 */
   --url-container-max-width: 600px !important;
   --url-container-max-height: 28px !important;
   --urlbar-min-height: 28px !important;
-  /* 标签页非选中宽度 */
   --tab-max-width-c: 120px !important;
-  /* 标签页选中宽度 */
   --tab-max-width-s: 210px !important;
   --tab-min-height: 28px !important;
   --tab-max-height: 28px !important;
@@ -34,16 +30,14 @@ hbox.titlebar-spacer,
 /* tabbar button new tab    */ #tabs-newtab-button,
 /* navigator button back    */ #navigator-toolbox #nav-bar #nav-bar-customization-target #back-button,
 /* navigator button forword */ #navigator-toolbox #nav-bar #nav-bar-customization-target #forward-button,
-/* 地址栏搜索图标 #urlbar-container:not(:hover) */ #identity-box,
-/* 地址栏安全图标 #urlbar-container:not(:hover) */ #tracking-protection-icon-container,
-/* 地址栏背景元素 */ #urlbar-background
+/* #urlbar-container:not(:hover) */ #identity-box,
+/* #urlbar-container:not(:hover) */ #tracking-protection-icon-container,
+/* */ #urlbar-background
 {
   display: none !important;
 }
 
-/* 设置整个导航工具栏为弹性盒模型，反转地址栏和标签栏的位置 */
 #navigator-toolbox {
-  /* position: relative !important; */
   display: flex !important;
   justify-content: start !important;
   flex-direction: row-reverse !important;
@@ -54,7 +48,7 @@ hbox.titlebar-spacer,
   -moz-appearance: unset !important;
   margin-left: 1px !important;
   flex: 1 !important;
-  height: var(--globle-height) !important;
+  height: var(--global-height) !important;
 }
 
 .tabbrowser-tab:is([fadein]) {
@@ -65,30 +59,28 @@ hbox.titlebar-spacer,
 }
 
 .tab-background {
-  height: var(--globle-height) !important;
+  height: var(--global-height) !important;
   border-radius: 1px !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 .tab-content {
   padding: 0 5px !important;
-  height: var(--globle-height) !important;
+  height: var(--global-height) !important;
 }
 
 #pinned-tabs-container[orient="horizontal"] {
   margin-inline-end: 0px !important;
 }
 
-/* 地址栏,消除一些边距 */
 #nav-bar,
 #nav-bar-customization-target,
 #urlbar-container {
   margin: 0px !important;
   padding: 0px !important;
-  height: var(--globle-height) !important;
+  height: var(--global-height) !important;
 }
 
-/* 地址栏宽度动画 */
 #urlbar-container {
   width: var(--url-container-width) !important;
   transition: width 400ms !important;
@@ -106,7 +98,6 @@ hbox.titlebar-spacer,
   display: block !important;
 }
 
-/* 书签栏 */
 #PersonalToolbar {
   width: 28px !important;
   height: 28px !important;
@@ -114,13 +105,11 @@ hbox.titlebar-spacer,
   margin-right: 1px !important;
 }
 
-/* 书签列表中的元素长宽 */
 menuitem.bookmark-item {
   min-width: 20em !important;
   max-width: 20em !important;
 }
 
-/* 修改书签组图标 */
 #PlacesChevron {
   list-style-image: url("chrome://browser/skin/bookmark.svg") !important;
 }
@@ -135,6 +124,7 @@ menuitem.bookmark-item {
     }
   }
 }
+
 /* place navigator bar to bottom */
 /* #navigator-toolbox {
   order: 2;
