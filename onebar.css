@@ -29,8 +29,8 @@ hbox.titlebar-spacer,
 /* close button */ .titlebar-buttonbox-container,
 /* close button wrapper */ .titlebar-spacer,
 
-/* tab    button close         */ .tab-close-button,
-/* tabbar button new tab    */ #tabs-newtab-button,
+/* tab    button close          .tab-close-button, */
+/* tabbar button new tab     #tabs-newtab-button, */
 /* navigator button back     #navigator-toolbox #nav-bar #nav-bar-customization-target #back-button,*/
 /* navigator button forward  #navigator-toolbox #nav-bar #nav-bar-customization-target #forward-button,*/
 /* 地址栏搜索图标 #urlbar-container:not(:hover) */ #identity-box,
@@ -89,14 +89,11 @@ hbox.titlebar-spacer,
   margin-inline-end: 0px !important;
 }
 
-#urlbar {
+#urlbar,
+.urlbar-background {
   border-radius: 0 !important;
 }
-
-.urlbar-background,
-#searchbar {
-  border-radius: 0 !important;
-}
+/*#searchbar {*/
 
 #nav-bar,
 #nav-bar-customization-target,
@@ -110,7 +107,9 @@ hbox.titlebar-spacer,
   width: var(--url-container-width) !important;
   transition: width 400ms !important;
 }
-#urlbar-container:hover:focus-within {
+#urlbar-container:hover:focus-within,
+#urlbar-container:focus-within,
+#urlbar-container:hover {
   width: var(--url-container-max-width) !important;
   transition: width 400ms !important;
 }
@@ -196,4 +195,12 @@ menuitem.bookmark-item {
 /* .tab-close-button  */ {
   display: inline-block !important;
   padding: 0 4px;
+}
+
+#nav-bar {
+  background-color: #3e4451 !important;
+}
+
+.urlbar-background {
+  background-color: #282c34 !important;
 }
