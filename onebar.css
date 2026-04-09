@@ -2,7 +2,7 @@
 :root {
   --global-height: 22px !important;
   --url-container-width: 250px !important;
-  --url-container-max-width: 250px !important;
+  --url-container-max-width: 30vw !important;
   --url-container-max-height: 22px !important;
   --urlbar-min-height: 22px !important;
   --tab-max-width-c: 120px !important;
@@ -130,6 +130,7 @@ margin:0 !important;
 #urlbar-container {
   width: var(--url-container-width) !important;
   transition: width 400ms !important;
+  border-radius: 0 !important;
 }
 #urlbar-container:hover:focus-within,
 #urlbar-container:focus-within {
@@ -408,6 +409,6 @@ menuitem.bookmark-item {
   background-color: #3e4451 !important;
 }
 
-.urlbar-input-container{
+#urlbar-container{
   background-color: #282c34 !important;
 }
