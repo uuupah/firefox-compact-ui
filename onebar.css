@@ -84,13 +84,16 @@ hbox.titlebar-spacer,
 
 /* the specific size is not important, it just needs to be a whole pixel to aid in
    the pixel perfect text rendering */
+/* also, increasing the padding-right over 16px or the container padding left over 
+   0 can cause blurry text. using a ::before on tab-label-container also causes misalignments */
 .tabbrowser-tab .tab-icon-stack {
   width: 16px !important; 
   padding-right: 16px !important;
 }
 
 .tab-label-container {
-	padding-left: 4px;
+	padding-left: 0px !important;
+	text-indent: 6px !important;
 }
 
 #pinned-tabs-container[orient="horizontal"] {
@@ -121,6 +124,10 @@ border:0 !important;
 padding:0 !important;
 margin:0 !important;
 }*/
+
+#urlbar-input {
+		text-indent: 6px !important;
+}
 
 #nav-bar,
 #nav-bar-customization-target,
@@ -352,10 +359,12 @@ menuitem.bookmark-item {
 }
 
 /* new tab button */
+#new-tab-button,
 #tabs-newtab-button {
   padding: 0 !important;
 }
 
+#new-tab-button .toolbarbutton-icon,
 #tabs-newtab-button .toolbarbutton-icon {
   display: none !important;
   padding: 0 !important;
@@ -364,6 +373,7 @@ menuitem.bookmark-item {
   min-height: 100% !important;
 }
 
+#new-tab-button .toolbarbutton-text::before,
 #tabs-newtab-button .toolbarbutton-text::before {
   content: "+";
   padding: 0 4px !important;
@@ -371,6 +381,7 @@ menuitem.bookmark-item {
   font-size: 16px !important;
 }
 
+#new-tab-button .toolbarbutton-text,
 #tabs-newtab-button .toolbarbutton-text {
   display: inline-block !important;
   padding: 0 !important;
@@ -378,6 +389,7 @@ menuitem.bookmark-item {
   height: 100% !important;
   min-height: 100% !important;
 }
+
 
 /* list all tabs button */
 #alltabs-button {
@@ -401,6 +413,11 @@ menuitem.bookmark-item {
 #alltabs-button .toolbarbutton-icon {
   display: none !important;
 }
+#scrollbutton-up,
+#scrollbutton-down {
+	height: 22px;
+	max-height:22px;
+}
 
 /* tooltips */
 .cui-widget-panel.panel-no-padding {
@@ -417,3 +434,10 @@ menuitem.bookmark-item {
   background-color: #282c34 !important;
   overflow: none;
 }
+
+#urlbar-searchmode-switcher {
+	margin-inline-end: 7px !important;
+		margin-right: 7px !important;
+
+}
+
