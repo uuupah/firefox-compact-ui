@@ -1,7 +1,7 @@
 /* this style maintained by https://github.com/MapoMagpie/firefox-compact-ui */
 :root {
   --global-height: 22px !important;
-  --url-container-width: 250px !important;
+  --url-container-width: 150px !important;
   --url-container-max-width: 30vw !important;
   --url-container-max-height: 22px !important;
   --urlbar-min-height: 22px !important;
@@ -63,11 +63,11 @@ hbox.titlebar-spacer,
 }
 
 .tabbrowser-tab:is([fadein]) {
-  max-width: var(--tab-max-width-c) !important;
+  max-width: round(var(--tab-max-width-c), 1px) !important;
 }
 
 .tabbrowser-tab:is([fadein]):is([selected]) {
-  max-width: var(--tab-max-width-s) !important;
+  max-width: round(var(--tab-max-width-s), 1px) !important;
 }
 
 .tab-background {
@@ -85,8 +85,12 @@ hbox.titlebar-spacer,
 /* the specific size is not important, it just needs to be a whole pixel to aid in
    the pixel perfect text rendering */
 .tabbrowser-tab .tab-icon-stack {
-  width: 12px !important;
-  padding-right: 20px !important;
+  width: 16px !important; 
+  padding-right: 16px !important;
+}
+
+.tab-label-container {
+	padding-left: 4px;
 }
 
 #pinned-tabs-container[orient="horizontal"] {
@@ -134,7 +138,7 @@ margin:0 !important;
 }
 #urlbar-container:hover:focus-within,
 #urlbar-container:focus-within {
-  width: var(--url-container-max-width) !important;
+  width: round(var(--url-container-max-width), 1px) !important;
   transition: width 400ms !important;
   border: 0 !important;
 }
@@ -170,7 +174,7 @@ menuitem.bookmark-item {
       [muted],
       [activemedia-blocked]
     ) {
-    .tab-content .tab-icon-image {
+    .tab-content .12px {
       display: none;
     }
     .tab-audio-button {
@@ -411,4 +415,5 @@ menuitem.bookmark-item {
 
 #urlbar-container{
   background-color: #282c34 !important;
+  overflow: none;
 }
