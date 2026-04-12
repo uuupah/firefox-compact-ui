@@ -1,15 +1,17 @@
 /* this style maintained by https://github.com/MapoMagpie/firefox-compact-ui */
 :root {
-  --global-height: 22px !important;
+  --global-height: 28px !important;
   --url-container-width: 150px !important;
   --url-container-max-width: 30vw !important;
-  --url-container-max-height: 22px !important;
-  --urlbar-min-height: 22px !important;
+  --url-container-max-height: var(--global-height) !important;
+  --urlbar-min-height: var(--global-height) !important;
   --tab-max-width-c: 120px !important;
   --tab-max-width-s: 210px !important;
-  --tab-min-height: 22px !important;
-  --tab-max-height: 22px !important;
+  --tab-min-height: var(--global-height) !important;
+  --tab-max-height: var(--global-height) !important;
   --tab-block-margin: 0px !important;
+  --font-family: "Terminus", "Unifont-JP", "Font Awesome 6 Free", Sans-serif;
+  --font-size: 20px;
 }
 
 /* 隐藏元素 */
@@ -46,9 +48,9 @@ hbox.titlebar-spacer,
   flex-wrap: wrap !important;
 
   border-radius: 0 !important;
-  font-family: "Unifont-JP", "Font Awesome 6 Free", Sans-serif !important;
+  font-family: var(--font-family) !important;
   letter-spacing: 0 !important;
-  font-size: 16px !important;
+  font-size: var(--font-size) !important;
 
   border-top-width: 0 !important;
   /* border-bottom-width: 2px !important; */
@@ -105,9 +107,9 @@ hbox.titlebar-spacer,
 #urlbar,
 .urlbar-background {
   border-radius: 0 !important;
-  font-size: 16px !important;
+  font-size: var(--font-size) !important;
   letter-spacing: 0px !important;
-  height: 22px !important;
+  height: var(--global-height) !important;
 }
 
 
@@ -157,9 +159,16 @@ margin:0 !important;
   display: block !important;
 }
 
+#urlbar-searchmode-switcher {
+	border-radius: 0 !important;
+	margin-inline-end: 7px !important;
+		margin-right: 7px !important;
+
+}
+
 #PersonalToolbar {
   width: 28px !important;
-  height: 22px !important;
+  height: var(--global-height) !important;
   padding-inline: 0 !important;
   margin-right: 1px !important;
 }
@@ -218,11 +227,14 @@ menuitem.bookmark-item {
    content: "<";
    padding: 0 4px !important;
    letter-spacing: 0 !important;
-   font-size: 16px !important;
+   font-size: var(--font-size) !important;
  }
 
 #back-button .toolbarbutton-text {
-   display: inline-block !important;
+   /* display: inline-block !important; */
+   display: flex !important;
+   flex-direction: row !important;
+   align-items: center;
   padding-top: 0 !important;
   border-radius: 0 !important;
   height: 100% !important;
@@ -250,12 +262,15 @@ menuitem.bookmark-item {
    content: ">";
    padding: 0 4px !important;
    letter-spacing: 0 !important;
-   font-size: 16px !important;
+   font-size: var(--font-size) !important;
    border-radius: 0 !important;
  }
 
 #forward-button .toolbarbutton-text {
-   display: inline-block !important;
+   /* display: inline-block !important; */
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
   padding-top: 0 !important;
   border-radius: 0 !important;
   height: 100% !important;
@@ -270,7 +285,10 @@ menuitem.bookmark-item {
 }
 
 #downloads-button .toolbarbutton-badge-stack {
-  display: inline-block !important;
+  /* display: inline-block !important; */
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
   padding: 0 !important;
   border-radius: 0 !important;
   height: 100% !important;
@@ -280,7 +298,7 @@ menuitem.bookmark-item {
 #downloads-button .toolbarbutton-badge-stack::before {
   content: "dwn";
   padding: 0 4px !important;
-  font-size: 16px !important;
+  font-size: var(--font-size) !important;
   border-radius: 0 !important;
 }
 
@@ -308,12 +326,15 @@ menuitem.bookmark-item {
   content: "ext";
   padding: 0 4px !important;
   letter-spacing: 0 !important;
-  font-size: 16px !important;
+  font-size: var(--font-size) !important;
   border-radius: 0 !important;
 }
 
 #unified-extensions-button .toolbarbutton-text {
-  display: inline-block !important;
+  /* display: inline-block !important; */
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
   padding: 0 !important;
   border-radius: 0 !important;
   height: 100% !important;
@@ -334,13 +355,16 @@ menuitem.bookmark-item {
   height: 100% !important;
   min-height: 100% !important;
   border-radius: 0 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
 }
 
 #PanelUI-menu-button .toolbarbutton-badge-stack::before {
   content: "mnu";
   padding: 0 4px !important;
   letter-spacing: 0 !important;
-  font-size: 16px !important;
+  font-size: var(--font-size) !important;
 }
 
 #PanelUI-menu-button .toolbarbutton-icon {
@@ -378,12 +402,15 @@ menuitem.bookmark-item {
   content: "+";
   padding: 0 4px !important;
   letter-spacing: 0 !important;
-  font-size: 16px !important;
+  font-size: var(--font-size) !important;
 }
 
 #new-tab-button .toolbarbutton-text,
 #tabs-newtab-button .toolbarbutton-text {
-  display: inline-block !important;
+  /* display: inline-block !important; */
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
   padding: 0 !important;
   border-radius: 0 !important;
   height: 100% !important;
@@ -401,13 +428,17 @@ menuitem.bookmark-item {
   border-radius: 0 !important;
   height: 100% !important;
   min-height: 100% !important;
+  
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
 }
 
 #alltabs-button .toolbarbutton-badge-stack::before {
   content: "v";
   padding: 0 4px !important;
   letter-spacing: 0 !important;
-  font-size: 16px !important;
+  font-size: var(--font-size) !important;
 }
 
 #alltabs-button .toolbarbutton-icon {
@@ -415,8 +446,8 @@ menuitem.bookmark-item {
 }
 #scrollbutton-up,
 #scrollbutton-down {
-	height: 22px;
-	max-height:22px;
+	height: var(--global-height);
+	max-height: var(--global-height);
 }
 
 /* tooltips */
@@ -435,9 +466,4 @@ menuitem.bookmark-item {
   overflow: none;
 }
 
-#urlbar-searchmode-switcher {
-	margin-inline-end: 7px !important;
-		margin-right: 7px !important;
-
-}
 
