@@ -1,7 +1,7 @@
 /* this style maintained by https://github.com/MapoMagpie/firefox-compact-ui */
 :root {
   --global-height: 28px !important;
-  --url-container-width: 150px !important;
+  --url-container-width: 250px !important;
   --url-container-max-width: 30vw !important;
   --url-container-max-height: var(--global-height) !important;
   --urlbar-min-height: var(--global-height) !important;
@@ -457,13 +457,16 @@ menuitem.bookmark-item {
 /* not sure i can do this for extensions because it opens a shadow root in the button */
 
 /* colours */
-#nav-bar {
+#nav-bar ,
+.tab-background[selected] {
   background-color: #3e4451 !important;
 }
 
-#urlbar-container{
+#urlbar-background,
+.tab-background {
   background-color: #282c34 !important;
-  overflow: none;
 }
 
-
+:root {
+	color: #B6BDCA !important;
+}

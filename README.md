@@ -1,7 +1,8 @@
 <h1>firefox-compact-ui</h1>
 
-![cover](./README.assets/example_01.avif)
-> Combine the tab bar and url bar into one line to save user space.
+based on [https://github.com/MapoMagpie/firefox-compact-ui](https://github.com/MapoMagpie/firefox-compact-ui)
+
+one line, super minimal firefox theme for users that control their browser with the keyboard. exetended from mapomagpie's design to suit my personal ui sensibilities. specifically designed for use with bitmap / pixel perfect fonts, but should work with any. uses hard edges and sharp corners. allows for colour scheming without fiddling with gtk settings. doesn't theme elements that arent in the toolbar. 
 
 ## English
 ### How to use
