@@ -1,3 +1,5 @@
+@import url(/home/uuu/.config/colours/librewolfcolors.css);
+
 /* this style maintained by https://github.com/MapoMagpie/firefox-compact-ui */
 :root {
   --global-height: 28px !important;
@@ -10,8 +12,8 @@
   --tab-min-height: var(--global-height) !important;
   --tab-max-height: var(--global-height) !important;
   --tab-block-margin: 0px !important;
-  --font-family: "Terminus", "Unifont-JP", "Font Awesome 6 Free", Sans-serif;
-  --font-size: 20px;
+  --font-family: "Iosevka Custom", "Terminus", "Unifont-JP", "Font Awesome 6 Free", Sans-serif;
+  --font-size: 12pt;
 }
 
 /* 隐藏元素 */
@@ -150,10 +152,6 @@ margin:0 !important;
   width: round(var(--url-container-max-width), 1px) !important;
   transition: width 400ms !important;
   border: 0 !important;
-}
-#urlbar > vbox.urlbarView {
-  display: none !important;
-  background-color: #37363ac9 !important;
 }
 #urlbar-container:hover:focus-within > #urlbar > vbox.urlbarView {
   display: block !important;
@@ -456,17 +454,3 @@ menuitem.bookmark-item {
 }
 /* not sure i can do this for extensions because it opens a shadow root in the button */
 
-/* colours */
-#nav-bar ,
-.tab-background[selected] {
-  background-color: #3e4451 !important;
-}
-
-#urlbar-background,
-.tab-background {
-  background-color: #282c34 !important;
-}
-
-:root {
-	color: #B6BDCA !important;
-}
