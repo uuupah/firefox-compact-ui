@@ -2,7 +2,7 @@
 
 /* this style maintained by https://github.com/MapoMagpie/firefox-compact-ui */
 :root {
-  --global-height: 28px !important;
+  --global-height: 22px !important;
   --url-container-width: 250px !important;
   --url-container-max-width: 30vw !important;
   --url-container-max-height: var(--global-height) !important;
@@ -12,8 +12,8 @@
   --tab-min-height: var(--global-height) !important;
   --tab-max-height: var(--global-height) !important;
   --tab-block-margin: 0px !important;
-  --font-family: "Iosevka Custom", "Terminus", "Unifont-JP", "Font Awesome 6 Free", Sans-serif;
-  --font-size: 12pt;
+  --font-family: "Unifont-JP", "Font Awesome 6 Free", Sans-serif;
+  --font-size: 16px;
 }
 
 /* 隐藏元素 */
